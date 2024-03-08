@@ -10,9 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="text-center">
-        <nav className="flex text-center items-center justify-between bg-orange-300 py-5">
-          <ul className="flex text-center items-center justify-between w-1/3 mx-auto">
+      <body className="text-center bg-bl text-white">
+        <nav className="flex text-center items-center justify-between bg-dr py-5">
+          <ul className="flex text-center items-center justify-between w-1/3 mx-auto font-semibold">
             <li>
               <Link href="/">Home</Link>
             </li>
