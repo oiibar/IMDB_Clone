@@ -1,7 +1,7 @@
 // page.js
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import getData from "./lib/fetch";
 
 export default function Home() {
@@ -64,6 +64,9 @@ export default function Home() {
               className="max-w-sm cursor-pointer text-black mb-4 p-6 bg-lt border border-gray-200 rounded-lg shadow"
               onClick={() => handleMovieClick(movie)}
             >
+              <img
+                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+              />
               <p>{movie.original_title}</p>
               <p>{movie.release_date}</p>
               <p>{movie.vote_average}</p>

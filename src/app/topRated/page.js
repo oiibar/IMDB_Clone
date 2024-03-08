@@ -16,6 +16,7 @@ export default function TopRated() {
           `https://api.themoviedb.org/3/movie/top_rated?api_key=e35efef9356eaebe3f989d02062900c9`
         );
         setTop(data);
+        s;
         setLoading(false);
       } catch (error) {
         console.error("Error fetching popular movies:", error);
@@ -49,6 +50,9 @@ export default function TopRated() {
             className="max-w-sm cursor-pointer text-black mb-4 mr-5 p-6 bg-lt border border-gray-200 rounded-lg shadow"
             onClick={() => handleMovieClick(result)}
           >
+            <img
+              src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
+            />
             <p>{result.original_title}</p>
             <p>{result.release_date}</p>
             <p>{result.vote_average}</p>

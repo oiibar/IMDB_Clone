@@ -49,6 +49,9 @@ export default function Popular() {
             className="max-w-sm cursor-pointer text-black mb-4 mr-5 p-6 bg-lt border border-gray-200 rounded-lg shadow cursor-pointer"
             onClick={() => handleMovieClick(result)}
           >
+            <img
+              src={`https://image.tmdb.org/t/p/original${result.poster_path}`}
+            />
             <p>{result.original_title}</p>
             <p>{result.release_date}</p>
             <p>{result.vote_average}</p>
