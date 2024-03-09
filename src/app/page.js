@@ -3,6 +3,8 @@
 
 import { useState } from "react";
 import getData from "./lib/fetch";
+import Popup from "./components/popup";
+import Card from "./components/card";
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -59,37 +61,11 @@ export default function Home() {
       {movies.length > 0 && (
         <div className="flex flex-wrap justify-between mt-4">
           {movies.map((movie) => (
-            <div
-              key={movie.id}
-              className="max-w-sm cursor-pointer text-black mb-4 p-6 bg-lt border border-gray-200 rounded-lg shadow"
-              onClick={() => handleMovieClick(movie)}
-            >
-              <img
-                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-              />
-              <p>{movie.original_title}</p>
-              <p>{movie.release_date}</p>
-              <p>{movie.vote_average}</p>
-            </div>
+            <Card arr={movie} event={handleMovieClick} />
           ))}
         </div>
       )}
-      {selectedMovie && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg w-1/3 text-black">
-            <p>{selectedMovie.original_title}</p>
-            <p>{selectedMovie.overview}</p>
-            <p>{selectedMovie.release_date}</p>
-            <button
-              onClick={closeModal}
-              className="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      {selectedMovie && <Popup arr={selectedMovie} btn={closeModal} />}
     </div>
   );
 }
