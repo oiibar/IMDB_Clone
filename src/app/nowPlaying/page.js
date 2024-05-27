@@ -46,7 +46,7 @@ export default function NowPlaying() {
       <h1 className="my-10 text-4xl font-semibold">Now Playing</h1>
       <div className="flex flex-wrap justify-between mt-4">
         {now.results.map((result) => (
-          <Card arr={result} event={handleMovieClick} />
+          <Card arr={result} key={result} event={handleMovieClick} />
         ))}
       </div>
       {selectedMovie && <Popup arr={selectedMovie} btn={closeModal} />}
