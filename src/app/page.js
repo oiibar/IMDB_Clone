@@ -61,7 +61,7 @@ export default function Home() {
       {movies.length > 0 && (
         <div className="flex flex-wrap justify-between mt-4">
           {movies.map((movie) => (
-            <Card arr={movie} event={handleMovieClick} />
+            <Card arr={movie} key={result} event={handleMovieClick} />
           ))}
         </div>
       )}
