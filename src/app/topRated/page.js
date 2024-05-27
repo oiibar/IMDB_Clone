@@ -47,7 +47,7 @@ export default function TopRated() {
       <h1 className="my-10 text-4xl font-semibold">Top Rated</h1>
       <div className="flex flex-wrap justify-between mt-4">
         {top.results.map((result) => (
-          <Card arr={result} event={handleMovieClick} />
+          <Card arr={result} key={result} event={handleMovieClick} />
         ))}
       </div>
       {selectedMovie && <Popup arr={selectedMovie} btn={closeModal} />}
